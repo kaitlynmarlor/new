@@ -1,0 +1,8 @@
+#from biopython import SeqIO
+from Bio import SeqIO
+#import SeqIO as Bio
+
+fastq_file = "SRR24133807.fastq"
+
+for record in SeqIO.parse(fastq_file, "fastq"):
+    print(record.seq)

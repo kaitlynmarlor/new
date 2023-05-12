@@ -1,0 +1,19 @@
+from Bio import SeqIO
+import pandas as pd
+
+# Define the FastQ file path
+fastq_file = "/Users/kaitlyn/Desktop/collaboratory/Comp-Bio/SRR24133807.fastq"
+
+# Create an empty list to hold the sequence data
+sequences = []
+
+# Parse the FastQ file and extract the sequence data
+for record in SeqIO.parse(fastq_file, "fastq"):
+    sequences.append(str(record.seq))
+
+# Convert the list of sequences to a pandas DataFrame
+df = pd.DataFrame({"Sequence": sequences})
+
+# Display the DataFrame
+# weeeeee
+print(df.head())
